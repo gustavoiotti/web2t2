@@ -9,14 +9,13 @@ const cors = require("cors");
 const app = express();
 
 /**
- * Database setup
- * mongoose.connect(config.DB,{ useMongoClient:true });
+ * Database mongodb
  */
-mongoose.connect( 'mongodb://localhost:27017/upload',
-  //process.env.MONGO_URL,
+mongoose.connect( //'mongodb://localhost:27017/upload',
+  process.env.MONGO_URL,
   {
     useNewUrlParser: true
-    //useMongoClient:true
+    
   }
 );
 
@@ -25,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(
-  "/files",
+  "/posts",
   express.static(path.resolve(__dirname, "..", "tmp", "uploads"))
 );
 

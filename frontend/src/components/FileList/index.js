@@ -39,6 +39,7 @@ const FileList = ({ files, onDelete }) => (
           {uploadedFile.url && (
             <a
               href={uploadedFile.url}
+              //{'http://localhost:3000/posts/'}
               target="_blank"
               rel="noopener noreferrer"
             >
